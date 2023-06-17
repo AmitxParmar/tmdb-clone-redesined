@@ -61,7 +61,7 @@ const HomePage = () => {
             )
           : null}
       </Grid>
-      {isLoading ? <p>Loading.... please wait...</p> : null}
+      {isLoading || isFetching ? <p className="font-bold text-red-600 px-12">Loading.... please wait...</p> : null}
     </main>
   );
 };

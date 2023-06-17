@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -8,11 +10,12 @@ module.exports = {
     extend: {
       height: {
         128: '40rem'
-      }
+      },
+      fontFamily: {
+        'sans': ['var(--font-raleway)', ...defaultTheme.fontFamily.sans]
+      },
     },
-    fontFamily: {
-      raleway: ['Raleway', 'sans-serif'],
-    },
+
     minHeight: {
       128: '40rem'
     }

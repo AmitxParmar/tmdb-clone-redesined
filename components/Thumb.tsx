@@ -1,11 +1,11 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 type Props = {
-    imgUrl: string;
-}
+  imgUrl: string;
+};
 
-const Thumb = ({imgUrl}: Props) => {
+const Thumb = ({ imgUrl }: Props) => {
   return (
     <Image
       placeholder="blur"
@@ -18,6 +18,6 @@ const Thumb = ({imgUrl}: Props) => {
       alt="thumb"
     />
   );
-}
+};
 
-export default Thumb
+export default Thumb;

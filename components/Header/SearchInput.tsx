@@ -10,4 +10,4 @@ const SearchInput = ({ setQuery }: Props) => {
   )
 }
 
-export default SearchInput
+export default SearchInput;
