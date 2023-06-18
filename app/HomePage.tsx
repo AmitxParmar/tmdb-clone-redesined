@@ -12,23 +12,27 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Header/Hero";
 import Grid from "@/components/Grid";
 import Card from "@/components/Card";
+import Spinner from "@/components/Spinner";
 
 const HomePage = () => {
   const [query, setQuery] = useState("");
   const { data, fetchNextPage, isLoading, isFetching, error } =
     useFetchMovies(query);
-  
+
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
     if (scrollHeight - scrollTop === clientHeight) fetchNextPage();
   };
-  
+
   // error handling
   if (error) return <div>Oh noooooooo something went wrong!</div>;
-console.log(data)
+  console.log(data);
   return (
-    <main className="main-element relative h-screen overflow-y-scroll" onScroll={handleScroll}>
+    <main
+      className="main-element relative h-screen overflow-y-scroll"
+      onScroll={handleScroll}
+    >
       <Header setQuery={setQuery} />
       {!query && data && data.pages ? (
         <Hero
@@ -70,11 +74,7 @@ console.log(data)
             )
           : null}
       </Grid>
-      {isLoading || isFetching ? (
-        <p className="font-bold text-red-600 px-12">
-          Loading.... please wait...
-        </p>
-      ) : null}
+      {isLoading || isFetching ? <Spinner /> : null}
     </main>
   );
 };
