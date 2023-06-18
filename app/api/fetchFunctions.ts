@@ -1,4 +1,4 @@
-import { Movies } from "./types";
+import { Movies } from "../../types";
 
 export const basicFetch = async<returnType>(endpoint: string): Promise<returnType> => {
     const response = await fetch(endpoint);

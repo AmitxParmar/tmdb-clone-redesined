@@ -16,7 +16,7 @@ const Hero = ({ imgUrl, title, text }: Props) => {
                     <p className='text-lg md:text-xl'>{text}</p>
                 </div>
             </div>
-            <Image className='object-cover' priority fill src={imgUrl} alt="hero-image"/>
+            <Image className='object-cover' priority fill  src={imgUrl} alt="hero-image"/>
         </div>
     )
 }

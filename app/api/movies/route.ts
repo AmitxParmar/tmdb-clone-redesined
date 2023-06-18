@@ -1,11 +1,14 @@
+import url from "url"; // convet to es6 
+
 // API URLs 
 import { SEARCH_BASE_URL, POPULAR_BASE_URL } from "@/config";
 // Basic fetchlay 
-import { basicFetch } from "@/api/fetchFunctions";
+import { basicFetch } from "@/app/api/fetchFunctions";
 // Types 
-import { Movies } from "@/api/types";
+import { Movies } from "@/types";
 import { NextResponse } from "next/server";
-import url from "url"; // convet to es6 
+
+
 export async function GET(req: Request) {
     let { page, search } = url.parse(req.url, true).query;
     

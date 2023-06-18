@@ -2,7 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 // Fetch function
 import { fetchMovies } from "./fetchFunctions";
 // Types
-import { Movies } from "./types";
+import { Movies } from "../../types";
 
 
 export const useFetchMovies = (search: string) => {

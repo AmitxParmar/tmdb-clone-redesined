@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 //fetch hoook
-import { useFetchMovies } from "@/api/fetchHooks";
+import { useFetchMovies } from "@/app/api/fetchHooks";
 // config
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "@/config";
 // components
@@ -74,7 +74,20 @@ const HomePage = () => {
             )
           : null}
       </Grid>
-      {isLoading || isFetching ? <Spinner /> : null}
+      {isLoading || isFetching ? (
+        <div className="grid max-w-7xl m-auto p-4 grid-cols-auto-fill gap-8">
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+          <div className="bg-gray-300/50 animate-pulse h-60 rounded-lg w-40"></div>
+        </div>
+      ) : null}
     </main>
   );
 };
