@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
+
 import Link from "next/link";
 
 //fetch hoook
@@ -17,9 +17,18 @@ const HomePage = () => {
   const [query, setQuery] = useState("");
   const { data, fetchNextPage, isLoading, isFetching, error } =
     useFetchMovies(query);
+  
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
+    if (scrollHeight - scrollTop === clientHeight) fetchNextPage();
+  };
+  
+  // error handling
+  if (error) return <div>Oh noooooooo something went wrong!</div>;
+console.log(data)
   return (
-    <main className="main-element relative h-screen overflow-y-scroll">
+    <main className="main-element relative h-screen overflow-y-scroll" onScroll={handleScroll}>
       <Header setQuery={setQuery} />
       {!query && data && data.pages ? (
         <Hero
@@ -61,7 +70,11 @@ const HomePage = () => {
             )
           : null}
       </Grid>
-      {isLoading || isFetching ? <p className="font-bold text-red-600 px-12">Loading.... please wait...</p> : null}
+      {isLoading || isFetching ? (
+        <p className="font-bold text-red-600 px-12">
+          Loading.... please wait...
+        </p>
+      ) : null}
     </main>
   );
 };

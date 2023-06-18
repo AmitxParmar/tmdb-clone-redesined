@@ -4,7 +4,7 @@ import Thumb from "./Thumb";
 type Props = {
   imgUrl: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
 };
 
 const Card = ({ imgUrl, title, subtitle }: Props) => {
