@@ -12,7 +12,7 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Header/Hero";
 import Grid from "@/components/Grid";
 import Card from "@/components/Card";
-import Spinner from "@/components/Spinner";
+import Spinner from "@/components/Skeletons/Cards";
 
 const HomePage = () => {
   const [query, setQuery] = useState("");

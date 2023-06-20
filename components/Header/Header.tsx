@@ -10,7 +10,7 @@ import Logo from '@/public/Logo.svg'
 import LogoSmall from '@/public/LogoSmall.svg'
 
 type Props = {
-  setQuery: React.Dispatch<React.SetStateAction<string>>;
+  setQuery?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Header = ({ setQuery }: Props) => {
